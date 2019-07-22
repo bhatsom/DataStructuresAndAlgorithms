@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'scala'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+//apply from: "$rootDir/versions.gradle"
+
+dependencies {
+    compile "org.scala-lang:scala-library:${scalaLangV}"
+
+    testCompile "junit:junit:${junitCoreV}"
+
+    compile "com.google.protobuf:protobuf-java:${protobufV}"
+
+}
+
+tasks{
+    task task1 (dependsOn: 'task2') {
+        System.out.println("Task1 for scala module executed..")
+    }
+
+    task task2 {
+        System.out.println("Task2 for scala module executed..")
+    }
+}

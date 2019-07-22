@@ -1,0 +1,15 @@
+//parent
+ext.parentV = '1.0-SNAPSHOT'
+
+//scala
+ext.scalaLangV = '2.12.4'
+
+//junit
+ext.junitCoreV = '3.8.1'
+
+//logging
+ext.slf4jV = '1.7.7'
+
+//protobuf
+ext.protobufV = '3.1.0'
+
