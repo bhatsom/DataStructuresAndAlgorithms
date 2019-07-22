@@ -1,5 +1,4 @@
-rootProject.name = 'core'
+rootProject.name = 'DataStructuresAndAlgorithms'
 
-include 'java-features'
-include 'scala'
-include 'ds-algo'
+include 'Algorithms'
+include 'DataStructures'

@@ -1,0 +1,21 @@
+<Configuration>
+
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="Date:%d LEVEL:%-5p Thread:[%t] Method:%M() Class:%C Message:%m%n"/>
+        </Console>
+        <File name="FILE" fileName="/users/somnath/F/practice/log4j/java-features.log">
+            <PatternLayout pattern="Date:%d LEVEL:%-5p Thread:[%t] Method:%M() Class:%C Message:%m%n"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="com.somnath.apps.misc" level="all"/>
+
+        <Root level="INFO">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="FILE"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
