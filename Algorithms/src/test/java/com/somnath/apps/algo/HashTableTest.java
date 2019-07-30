@@ -1,4 +1,4 @@
-package com.somnath.apps.ds;
+package com.somnath.apps.algo;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
