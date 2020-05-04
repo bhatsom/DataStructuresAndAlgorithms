@@ -9,6 +9,16 @@ public class Factorial {
 
 	}
 
+	/**
+	 * https://stackoverflow.com/questions/2327244/complexity-of-recursive-factorial-program
+	 *
+	 * Factorial(n) is directly proportional to n. Therefore, the time complexity of recursive factorial is O(n).
+	 * As there is no extra space taken during the recursive calls, the space complexity is also O(n).
+	 *
+	 * @param n
+	 * @return
+	 */
+
 	public static int factorialRecursive(int n)	{
 		if (n <= 1)
 			return 1;
@@ -16,6 +26,7 @@ public class Factorial {
 	}
 
 	//iterative function calculates n!
+	// Time-Complexity = O(N) and Space-Complexity = O(N)
 	public static int factorialIterative(int n) {
 		int fact = 1;
 

@@ -9,18 +9,22 @@ class HashTableTest {
 
 	@BeforeEach
 	void setUp() {
+		System.out.println("Running BeforeEach..");
 	}
 
 	@AfterEach
 	void tearDown() {
+		System.out.println("Running AfterEach..");
 	}
 
 	@Test
 	void put() {
+		System.out.println("Running Test for put()..");
 	}
 
 	@Test
 	void get() {
+		System.out.println("Running Test for get()..");
 	}
 
 }

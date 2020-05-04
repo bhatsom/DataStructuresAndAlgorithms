@@ -11,11 +11,26 @@ public class Fibonacci {
 
 		System.out.println("0 1 1 2 3 5 8 13 21 34 55 89");
 
-		if(countFibonacciNumbers(10,100) == 5){
+		/*if(countFibonacciNumbers(10,100) == 5){
 			System.out.println("Passed");
 			return;
 		}
 		System.out.println("Failed");
+		*/
+
+		computedFib.clear();
+		long startTime = System.currentTimeMillis();
+		System.out.println("START No Memoization: " + startTime);
+		int res1 = 0;
+		//int res1 = fibRecursive(100);
+		System.out.println("DONE Time Taken: " + (System.currentTimeMillis() - startTime));
+		System.out.println("Result: " + res1);
+
+		startTime = System.currentTimeMillis();
+		System.out.println("START with Memoization: " + startTime);
+		int res2 = fibonacciRecursive(100);
+		System.out.println("DONE Time Taken: " + (System.currentTimeMillis() - startTime));
+		System.out.println("Result: " + res2);
 	}
 
 	private static int countFibonacciNumbers(int low, int high){
@@ -68,6 +83,21 @@ public class Fibonacci {
 			prev = result;
 		}
 		return result;
+	}
+
+	private static int fibRecursive(int n){
+		int res;
+
+		if (n <=1)
+			return 1;
+//		if(computedFib.containsKey(n))
+//			return computedFib.get(n);
+//		else {
+			res = fibRecursive(n-1) + fibRecursive(n-2);
+			//computedFib.put(n, res);
+		//}
+
+		return res;
 	}
 
 }

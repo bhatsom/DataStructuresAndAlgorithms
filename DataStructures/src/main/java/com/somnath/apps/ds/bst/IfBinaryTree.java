@@ -1,4 +1,4 @@
-package com.somnath.apps.algo.bst;
+package com.somnath.apps.ds.bst;
 
 // check if given Binary tree is a BST or not
 //https://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/
