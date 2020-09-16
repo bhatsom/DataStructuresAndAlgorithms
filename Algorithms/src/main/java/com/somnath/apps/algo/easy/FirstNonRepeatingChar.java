@@ -20,35 +20,39 @@ public class FirstNonRepeatingChar {
 	*/
 	// single iteration approach - O(n) - more space
 	public static char firstNonRepeatingChar(String word) {
-		Set<Character> repeating = new HashSet<>();
+		Set<Character> visited = new HashSet<>();
 		List<Character> nonRepeating = new ArrayList<>();
 
 		for (int i = 0; i < word.length(); i++) {
 			char letter = word.charAt(i);
 			System.out.println("processing: " + letter);
-			if (repeating.contains(letter)) {
-				continue;
+			if (visited.contains(letter)) {
+				nonRepeating.remove((Character) letter); // has to traverse the list so worst case = O(N)
+			} else {
+				visited.add(letter);
+				nonRepeating.add(letter);
 			}
 
-			if (nonRepeating.contains(letter)) {
+			/*if (nonRepeating.contains(letter)) {
 				nonRepeating.remove((Character) letter);
 				repeating.add(letter);
 			} else {
 				nonRepeating.add(letter);
-			}
+			}*/
+
 		}
 		return nonRepeating.get(0);
 	}
 
 	// two iteration - O(n) - less space
 	public static char firstNonRepeatingChar2(String str) {
-		Map<Character, Integer> counts = new LinkedHashMap<>(str.length());
+		Map<Character, Integer> charCounts = new LinkedHashMap<>(str.length());
 
 		for (char c : str.toCharArray()) {
-			counts.put(c, counts.containsKey(c) ? counts.get(c) + 1 : 1);
+			charCounts.put(c, charCounts.containsKey(c) ? charCounts.get(c) + 1 : 1);
 		}
 
-		for (Map.Entry<Character,Integer> entry : counts.entrySet()) {
+		for (Map.Entry<Character,Integer> entry : charCounts.entrySet()) {
 			if (entry.getValue() == 1) {
 				return entry.getKey();
 			}

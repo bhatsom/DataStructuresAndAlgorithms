@@ -4,28 +4,29 @@ import java.util.*;
 
 class PermutationDistinctInt {
 
-  public static void backtrack(int n,
-                        ArrayList<Integer> nums,
-                        List<List<Integer>> output,
-                        int first) {
+  public static void backtrack(int n, ArrayList<Integer> nums, List<List<Integer>> output, int first) {
     // if all integers are used up
     if (first == n)
-      output.add(new ArrayList<Integer>(nums));
+      output.add(new ArrayList<>(nums));
 
     for (int i = first; i < n; i++) {
-      // place i-th integer first 
-      // in the current permutation
+      // place i-th integer first in the current permutation
       Collections.swap(nums, first, i);
+      System.out.println("1-first=" +first + " i=" + i + " nums=" + nums +" output=" + output);
+
       // use next integers to complete the permutations
       backtrack(n, nums, output, first + 1);
+      System.out.println("2-first=" +first + " i=" + i + " nums=" + nums +" output=" + output);
+
       // backtrack
       Collections.swap(nums, first, i);
+      System.out.println("3-first=" +first + " i=" + i + " nums=" + nums +" output=" + output);
     }
 
   }
 
   public static List<List<Integer>> permute(int[] nums) {
-    // init output list
+    // output list
     List<List<Integer>> output = new LinkedList<>();
 
     // convert nums into list since the output is a list of lists

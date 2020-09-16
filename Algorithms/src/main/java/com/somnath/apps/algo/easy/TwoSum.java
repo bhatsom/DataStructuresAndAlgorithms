@@ -5,6 +5,12 @@ package com.somnath.apps.algo.easy;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Given an array of integers and an integer target, return indices of the two numbers such that they add up to target.
+ *
+ * Input: nums = [2,7,11,15], target = 9
+ * Output: [0,1]
+ */
 public class TwoSum {
 
 	//Time complexity : O(n)    Space complexity : O(n)

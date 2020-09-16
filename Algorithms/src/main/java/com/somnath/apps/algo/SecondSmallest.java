@@ -2,8 +2,12 @@ package com.somnath.apps.algo;
 
 public class SecondSmallest {
 
-	/* Function to print first smallest and second smallest elements */
-	static void print2ndSmallest(int arr[]) {
+	public static void main (String[] args) {
+		int arr[] = {12, 13, 1, 10, 34, 1};
+		print2ndSmallest(arr);
+	}
+
+	public static void print2ndSmallest(int arr[]) {
 		int first = Integer.MAX_VALUE, second = Integer.MAX_VALUE, arrSize = arr.length;
 
 		// There should be at least two elements
@@ -29,10 +33,5 @@ public class SecondSmallest {
 			System.out.println("The smallest element is:" + first + " and second smallest element is:" + second);
 	}
 
-	public static void main (String[] args) {
-
-		int arr[] = {12, 13, 1, 10, 34, 1};
-		print2ndSmallest(arr);
-	}
 
 }
