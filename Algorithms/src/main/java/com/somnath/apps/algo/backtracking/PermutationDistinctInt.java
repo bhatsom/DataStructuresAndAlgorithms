@@ -1,17 +1,18 @@
 package com.somnath.apps.algo.backtracking;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 class PermutationDistinctInt {
 
-  public static void backtrack(int n, ArrayList<Integer> nums, List<List<Integer>> output, int first) {
+  public static void backtrack(int n, int[] nums, List<List<Integer>> output, int first) {
     // if all integers are used up
     if (first == n)
-      output.add(new ArrayList<>(nums));
+      output.add(Arrays.stream(nums).boxed().collect(Collectors.toList()));
 
     for (int i = first; i < n; i++) {
       // place i-th integer first in the current permutation
-      Collections.swap(nums, first, i);
+      swap(nums, first, i);
       System.out.println("1-first=" +first + " i=" + i + " nums=" + nums +" output=" + output);
 
       // use next integers to complete the permutations
@@ -19,28 +20,26 @@ class PermutationDistinctInt {
       System.out.println("2-first=" +first + " i=" + i + " nums=" + nums +" output=" + output);
 
       // backtrack
-      Collections.swap(nums, first, i);
+      swap(nums, first, i);
       System.out.println("3-first=" +first + " i=" + i + " nums=" + nums +" output=" + output);
     }
 
   }
 
+  private static void swap(int[] arr, int i, int j) {
+    int tmp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = tmp;
+  }
+
   public static List<List<Integer>> permute(int[] nums) {
-    // output list
     List<List<Integer>> output = new LinkedList<>();
-
-    // convert nums into list since the output is a list of lists
-    ArrayList<Integer> nums_lst = new ArrayList<>();
-    for (int num : nums)
-      nums_lst.add(num);
-
-    int n = nums.length;
-    backtrack(n, nums_lst, output, 0);
+    backtrack(nums.length, nums, output, 0);
     return output;
   }
 
   public static void main(String[] args) {
-    System.out.println("Combinations:" + permute(new int[]{1,2,3}));
+    System.out.println("Permutations: " + permute(new int[]{1,2,3}));
   }
 
 }

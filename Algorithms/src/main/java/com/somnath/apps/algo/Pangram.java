@@ -20,9 +20,8 @@ public class Pangram {
 			alphabets.add(i);
 		}
 
-		//String str = "The quick brown fox jumps over the lazy dog".toUpperCase();
-		String str = "The quick brown fox jumps over the lazy";
-		//str.split()
+		String str = "The quick brown fox jumps over the lazy dog".toUpperCase();
+		//String str = "The quick brown fox jumps over the lazy";
 		for(byte b : str.toUpperCase().getBytes()) {
 			System.out.print(b);
 			System.out.print(" ");

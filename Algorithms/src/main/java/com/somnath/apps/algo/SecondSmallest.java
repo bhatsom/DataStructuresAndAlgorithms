@@ -2,7 +2,7 @@ package com.somnath.apps.algo;
 
 public class SecondSmallest {
 
-	public static void main (String[] args) {
+	public static void main(String[] args) {
 		int arr[] = {12, 13, 1, 10, 34, 1};
 		print2ndSmallest(arr);
 	}
@@ -16,13 +16,13 @@ public class SecondSmallest {
 			return;
 		}
 
-		for (int i = 0; i < arrSize; i ++) {
+		for (int i = 0; i < arrSize; i++) {
 			if (arr[i] < first) {
 				second = first;
 				first = arr[i];
 			}
 
-            // If arr[i] is in between first and second then update second
+			// If arr[i] is in between first and second then update second
 			else if (arr[i] < second && arr[i] != first)
 				second = arr[i];
 		}
